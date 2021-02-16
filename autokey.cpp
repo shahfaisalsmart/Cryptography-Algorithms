@@ -1,5 +1,9 @@
 // AUTOKEY CIPHER
 // BY MOHAMMAD FAISAL
+
+// tested on :: https://ideone.com/Jrd9tv
+
+
 #include<iostream>
 using namespace std;
 
