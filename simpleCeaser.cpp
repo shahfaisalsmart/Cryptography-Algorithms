@@ -1,74 +1,21 @@
-/*
-* Caeser Cipher
-*
-* Code by MOHAMMAD FAISAL
-*/
-#include <iostream> 
-using namespace std; 
+// simple cipher	
+// mohammad faisal
+// https://ideone.com/f8IPrf
 
-//encrypts text with the shift of s
-string encrypt(string text, int s) 
-{ 
-	string result = "";
-    int l=text.length();
-    char ch;
-	for (int i=0;i<l;i++) 
-	{ 
-	    ch=text[i];
-	    //ignoring space
-	    if(ch!=' ')
-	    {
-	        //encrypting upper case
-		    if (isupper(ch)) 
-    			result += char(int(ch+s-65)%26 +65); 
-
-            //encrypting lower case
-	        else
-		        result += char(int(ch+s-97)%26 +97); 
-	    }
-	    else
-	        //adding space
-	        result=result+ch;
-	} 
-	return result; 
-} 
-
-//decrypts text with the shift of s
-string decrypt(string text, int s) 
-{ 
-	string result = "";
-    int l=text.length();
-    char ch;
-	for (int i=0;i<l;i++) 
-	{ 
-	    ch=text[i];
-	    //ignoring space
-	    if(ch!=' ')
-	    {
-	        //for upper case character
-		    if (isupper(ch)) 
-			    result += char(int(ch-s-65)%26 +65); 
-
-            //for lower case character
-	        else
-		        result += char(int(ch-s-97)%26 +97); 
-	    }
-	    else
-	        //adding space
-	        result=result+ch;
-	} 
-	return result; 
-} 
-
-//main code
-int main() 
-{ 
-	string text="Caeser Cipher"; 
-	int s = 4; 
-	cout << "Text : " << text; 
-	cout << "\nShift: " << s; 
-	string cipher=encrypt(text,s);
-	cout << "\nCipher: " << cipher; 
-	cout << "\nDecrypt: "<< decrypt(cipher,s);
-	return 0; 
-} 
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    int i,j,k;
+    string s,t;
+    int key;
+    cout<<"Enter the key\n";
+    cin>>key;
+    cout<<"Enter the message\n";
+    cin>>s;
+    for(i=0;i<s.size();i++){
+        t+=(s[i]-'A'+key)%26+'A';
+    }
+    cout<<"\n\nEncrypted message is "<<t<<'\n';
+    return 0;
+}
