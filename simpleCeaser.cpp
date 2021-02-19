@@ -1,6 +1,7 @@
 // simple cipher	
 // mohammad faisal
 // https://ideone.com/f8IPrf
+//https://ideone.com/QOd4Un
 
 #include<iostream>
 #include<string>
